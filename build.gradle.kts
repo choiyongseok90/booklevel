@@ -95,6 +95,7 @@ subprojects {
             dependency("net.logstash.logback:logstash-logback-encoder:${Versions.logstash_logback_encoder}")
         }
     }
+
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
@@ -108,6 +109,11 @@ subprojects {
         useJUnitPlatform()
         testLogging {
 //            events = setOf(FAILED, PASSED, SKIPPED)
+        }
+    }
+    configurations {
+        compileOnly {
+            extendsFrom(configurations.annotationProcessor.get())
         }
     }
     // code의 테스트 커버리지를 확실히 알기 위해 사용한다.
@@ -125,7 +131,18 @@ subprojects {
 //        }
 //    }
 }
+project(":booklevel-domain-core") {
+    val jar: Jar by tasks
+    val bootJar: BootJar by tasks
+    bootJar.enabled = false
+    jar.enabled = true
+}
 
+project(":booklevel-app-api") {
+    dependencies {
+        implementation("net.logstash.logback:logstash-logback-encoder:${Versions.logstash_logback_encoder}")
+    }
+}
 
 
 
