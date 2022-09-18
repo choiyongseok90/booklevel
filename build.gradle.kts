@@ -137,10 +137,24 @@ project(":booklevel-domain-core") {
     bootJar.enabled = false
     jar.enabled = true
 }
-
+project(":booklevel-domain-model") {
+    val jar: Jar by tasks
+    val bootJar: BootJar by tasks
+    bootJar.enabled = false
+    jar.enabled = true
+}
 project(":booklevel-app-api") {
     dependencies {
         implementation("net.logstash.logback:logstash-logback-encoder:${Versions.logstash_logback_encoder}")
+        implementation(project(":booklevel-domain-model"))
+        implementation(project(":booklevel-domain-core"))
+    }
+}
+project(":booklevel-internal-api") {
+    dependencies {
+        implementation("net.logstash.logback:logstash-logback-encoder:${Versions.logstash_logback_encoder}")
+        implementation(project(":booklevel-domain-model"))
+        implementation(project(":booklevel-domain-core"))
     }
 }
 
