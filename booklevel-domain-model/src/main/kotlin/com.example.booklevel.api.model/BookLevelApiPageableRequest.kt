@@ -1,4 +1,4 @@
-package com.fnb.review.api.model
+package com.example.booklevel.api.model
 
 /** 페이지 요청 */
 data class BookLevelApiPageableRequest(

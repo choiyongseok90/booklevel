@@ -2,6 +2,7 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":booklevel-domain-model"))
     implementation(project(":booklevel-domain-core"))
     implementation("net.logstash.logback:logstash-logback-encoder:${Versions.logstash_logback_encoder}")
 
@@ -18,7 +19,7 @@ dependencies {
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-//    testImplementation(testFixtures(project(":fnb-review-domain-core")))
+//    testImplementation(testFixtures(project(":booklevel-domain-core")))
 }
 
 tasks.jar {

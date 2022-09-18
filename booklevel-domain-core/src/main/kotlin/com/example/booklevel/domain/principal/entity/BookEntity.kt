@@ -1,6 +1,7 @@
 package com.example.booklevel.domain.principal.entity
 
 import BaseEntity
+import org.hibernate.annotations.ColumnDefault
 import org.hibernate.annotations.Comment
 import org.jetbrains.annotations.NotNull
 import javax.persistence.*
@@ -25,9 +26,13 @@ class BookEntity (
     @NotNull
     var title: String,
 
-    @Column(nullable = false, name = "average_book_level", columnDefinition="Decimal(2,1) default '3.0'")
-    @Comment(value = "사용자 난이도 평가 평균(default:3.0)")
+    @Column(nullable = false, name = "author", length = 50)
+    @Comment("저자")
     @NotNull
+    var author: String,
+
+    @Column(name = "average_book_level", columnDefinition="Decimal(2,1) default '3.0'")
+    @Comment(value = "사용자 난이도 평가 평균(default:3.0)")
     var averageBookLevel: Double,
 
     @OneToMany(mappedBy = "review", fetch = FetchType.LAZY)

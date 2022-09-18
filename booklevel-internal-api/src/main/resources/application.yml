@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: fnb-review-internal-api
+    name: booklevel-internal-api
   profiles:
     group:
       "local": "persist-local, rest-local, infra-local, messages"

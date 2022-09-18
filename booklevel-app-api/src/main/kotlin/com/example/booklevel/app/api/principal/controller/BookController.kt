@@ -1,8 +1,9 @@
 package com.example.booklevel.app.api.principal.controller
 
+import com.example.booklevel.api.model.BookLevelApiResponse
 import com.example.booklevel.app.api.principal.model.ReviewSimpleDto
 import com.example.booklevel.app.api.principal.service.BookReviewSearchService
-import com.fnb.review.api.model.BookLevelApiResponse
+
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/books")
-class BookReviewController(
+class BookController(
     val bookReviewSearchService: BookReviewSearchService
 ) {
     @GetMapping("/{bookId}/reviews/{reviewId}")

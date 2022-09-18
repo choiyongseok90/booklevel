@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service
 @Service
 class MemberQueryService(val memberRepository: MemberRepository) {
 
-    fun findAll() : MutableList<MemberEntity> =
-        memberRepository.findAll()
+//    fun findAll() : MutableList<MemberEntity> =
+//        memberRepository.findAll()
 
     fun findById(@NotNull memberId : Long) : MemberEntity =
         memberRepository.findById(memberId).orElseThrow()

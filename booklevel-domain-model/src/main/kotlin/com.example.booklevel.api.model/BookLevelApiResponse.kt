@@ -1,4 +1,5 @@
-package com.fnb.review.api.model
+
+package com.example.booklevel.api.model
 
 import java.time.LocalDateTime
 import java.time.ZoneId
