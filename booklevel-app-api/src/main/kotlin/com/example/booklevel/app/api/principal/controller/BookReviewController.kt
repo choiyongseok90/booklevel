@@ -14,16 +14,16 @@ class BookReviewController(
     val bookReviewSearchService: BookReviewSearchService
 ) {
     @GetMapping("/{bookId}/reviews/{reviewId}")
-    fun review(@PathVariable("bookId") storeId: Long, @PathVariable("reviewId") reviewId: Long): BookLevelApiResponse<ReviewSimpleDto> {
+    fun review(@PathVariable("bookId") bookId: Long, @PathVariable("reviewId") reviewId: Long): BookLevelApiResponse<ReviewSimpleDto> {
         return BookLevelApiResponse.ok(
-            bookReviewSearchService.findByStoreIdAndReviewId(storeId, reviewId)
+            bookReviewSearchService.findByBookIdAndReviewId(bookId, reviewId)
         )
     }
 
     @GetMapping("/{bookId}/reviews")
-    fun reviews(@PathVariable("bookId") storeId: Long) : BookLevelApiResponse<List<ReviewSimpleDto>> {
+    fun reviews(@PathVariable("bookId") bookId: Long) : BookLevelApiResponse<List<ReviewSimpleDto>> {
         return BookLevelApiResponse.ok(
-            bookReviewSearchService.findByStoreId(storeId)
+            bookReviewSearchService.findByBookId(bookId)
         )
     }
 }
