@@ -1,17 +1,16 @@
 package com.example.booklevel.domain.principal.entity
 
-import BaseEntity
-import org.hibernate.annotations.ColumnDefault
+import com.example.booklevel.domain.entity.base.BaseEntity
 import org.hibernate.annotations.Comment
 import org.jetbrains.annotations.NotNull
 import javax.persistence.*
-
+import com.example.booklevel.domain.principal.entity.ReviewEntity
 
 @Entity
 @Table(
     name = "book",
     indexes = [
-        Index(name = "idx_book_level", columnList = "average_level", unique = false)
+        Index(name = "idx_book_level", columnList = "average_book_level", unique = false)
     ]
 )
 @org.hibernate.annotations.Table(appliesTo = "book", comment = "도서")
@@ -35,7 +34,7 @@ class BookEntity (
     @Comment(value = "사용자 난이도 평가 평균(default:3.0)")
     var averageBookLevel: Double,
 
-    @OneToMany(mappedBy = "review", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
     var reviews: MutableList<ReviewEntity> = mutableListOf()
 
 

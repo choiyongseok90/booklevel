@@ -1,3 +1,5 @@
+package com.example.booklevel.domain.entity.base
+
 import org.hibernate.annotations.Comment
 import org.springframework.data.annotation.CreatedBy
 import org.springframework.data.annotation.CreatedDate

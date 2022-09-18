@@ -1,4 +1,4 @@
-package com.example.booklevel.app
+package com.example.booklevel.internal
 
 import com.example.booklevel.internal.api.message.ErrorMessageProperty
 import org.springframework.boot.autoconfigure.SpringBootApplication

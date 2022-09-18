@@ -1,8 +1,9 @@
 package com.example.booklevel.internal.api.principal.service
 
-import BookForm
+
 import com.example.booklevel.domain.principal.service.BookCommandService
 import com.example.booklevel.domain.principal.service.ReviewCommandService
+import com.example.booklevel.internal.api.principal.model.BookForm
 import org.springframework.stereotype.Service
 import java.lang.RuntimeException
 

@@ -1,6 +1,7 @@
 package com.example.booklevel.domain.principal.entity
 
-import BaseEntity
+import com.example.booklevel.domain.principal.entity.ReviewEntity
+import com.example.booklevel.domain.entity.base.BaseEntity
 import org.hibernate.annotations.Comment
 import org.jetbrains.annotations.NotNull
 import javax.persistence.*
@@ -31,7 +32,7 @@ class MemberEntity (
     @NotNull
     var password: String,
 
-    @OneToMany(mappedBy = "review", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
     var reviews: MutableList<ReviewEntity> = mutableListOf()
 
     ): BaseEntity()

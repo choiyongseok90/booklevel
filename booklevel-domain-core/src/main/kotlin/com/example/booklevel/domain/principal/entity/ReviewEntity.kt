@@ -1,6 +1,6 @@
 package com.example.booklevel.domain.principal.entity
 
-import BaseEntity
+import com.example.booklevel.domain.entity.base.BaseEntity
 import org.hibernate.annotations.Comment
 import org.jetbrains.annotations.NotNull
 import javax.persistence.*

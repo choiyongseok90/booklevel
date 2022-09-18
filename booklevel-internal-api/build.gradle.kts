@@ -19,7 +19,7 @@ dependencies {
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-//    testImplementation(testFixtures(project(":booklevel-domain-core")))
+    testImplementation(testFixtures(project(":booklevel-domain-core")))
 }
 
 tasks.jar {
@@ -28,6 +28,6 @@ tasks.jar {
 
 tasks.bootJar {
     enabled = true
-    mainClass.set("com.example.booklevel.app.AppApiApplicationKt")
+    mainClass.set("com.example.booklevel.internal.InternalApiApplicationKt")
     archiveFileName.set("${archiveBaseName.get()}.${archiveExtension.get()}")
 }

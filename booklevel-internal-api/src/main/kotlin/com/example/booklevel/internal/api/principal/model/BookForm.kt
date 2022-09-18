@@ -1,3 +1,4 @@
+package com.example.booklevel.internal.api.principal.model
 import com.example.booklevel.domain.principal.entity.BookEntity
 import io.swagger.annotations.ApiModel
 import io.swagger.annotations.ApiModelProperty
