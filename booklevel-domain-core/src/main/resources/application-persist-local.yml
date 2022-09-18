@@ -10,9 +10,9 @@ spring:
     database-platform: org.hibernate.dialect.MariaDB103Dialect
     open-in-view: false
   datasource:
-    url: "jdbc:mariadb://127.0.0.1:3308/fnb_review?allowPublicKeyRetrieval=true&useSSL=false"
-    username: fnb_review
-    password: fnb_review
+    url: "jdbc:mariadb://127.0.0.1:3308/booklevel?allowPublicKeyRetrieval=true&useSSL=false"
+    username: booklevel
+    password: booklevel
     driver-class-name: org.mariadb.jdbc.Driver
   redis:
     host: 127.0.0.1
