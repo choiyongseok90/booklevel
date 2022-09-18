@@ -21,10 +21,10 @@ class MemberEntity (
     @NotNull
     var name: String,
 
-    @Column(nullable = false, name = "username")
-    @Comment(value = "사용자Id")
+    @Column(nullable = false, name = "email")
+    @Comment(value = "이메일")
     @NotNull
-    var userName: String,
+    var email: String,
 
     @Column(nullable = false, name = "password")
     @Comment(value = "비밀번호")

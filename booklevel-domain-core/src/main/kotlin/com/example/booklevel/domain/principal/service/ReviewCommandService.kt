@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 @Transactional(readOnly = false)
 class ReviewCommandService(
-    val reviewRepository: ReviewRepository
+    val reviewRepository: ReviewRepository,
 ) {
 
     fun save( review: ReviewEntity) :ReviewEntity {
